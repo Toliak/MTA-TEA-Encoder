@@ -203,6 +203,33 @@ md5.cpp.s:
 	$(MAKE) -f CMakeFiles\MTA_TEA_Encoder.dir\build.make CMakeFiles/MTA_TEA_Encoder.dir/md5.cpp.s
 .PHONY : md5.cpp.s
 
+tea.obj: tea.cpp.obj
+
+.PHONY : tea.obj
+
+# target to build an object file
+tea.cpp.obj:
+	$(MAKE) -f CMakeFiles\MTA_TEA_Encoder.dir\build.make CMakeFiles/MTA_TEA_Encoder.dir/tea.cpp.obj
+.PHONY : tea.cpp.obj
+
+tea.i: tea.cpp.i
+
+.PHONY : tea.i
+
+# target to preprocess a source file
+tea.cpp.i:
+	$(MAKE) -f CMakeFiles\MTA_TEA_Encoder.dir\build.make CMakeFiles/MTA_TEA_Encoder.dir/tea.cpp.i
+.PHONY : tea.cpp.i
+
+tea.s: tea.cpp.s
+
+.PHONY : tea.s
+
+# target to generate assembly for a file
+tea.cpp.s:
+	$(MAKE) -f CMakeFiles\MTA_TEA_Encoder.dir\build.make CMakeFiles/MTA_TEA_Encoder.dir/tea.cpp.s
+.PHONY : tea.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -221,6 +248,9 @@ help:
 	@echo ... md5.obj
 	@echo ... md5.i
 	@echo ... md5.s
+	@echo ... tea.obj
+	@echo ... tea.i
+	@echo ... tea.s
 .PHONY : help
 
 

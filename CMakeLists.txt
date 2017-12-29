@@ -3,4 +3,4 @@ project(MTA_TEA_Encoder)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MTA_TEA_Encoder main.cpp md5.cpp base64.cpp)
+add_executable(MTA_TEA_Encoder main.cpp md5.cpp base64.cpp tea.cpp tea.h)

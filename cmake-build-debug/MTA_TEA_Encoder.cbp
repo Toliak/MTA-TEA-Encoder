@@ -95,6 +95,12 @@
 		<Unit filename="C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/md5.h">
 			<Option target="MTA_TEA_Encoder"/>
 		</Unit>
+		<Unit filename="C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/tea.cpp">
+			<Option target="MTA_TEA_Encoder"/>
+		</Unit>
+		<Unit filename="C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/tea.h">
+			<Option target="MTA_TEA_Encoder"/>
+		</Unit>
 		<Unit filename="C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

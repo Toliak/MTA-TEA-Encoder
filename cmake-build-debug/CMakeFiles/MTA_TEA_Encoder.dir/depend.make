@@ -7,7 +7,11 @@ CMakeFiles/MTA_TEA_Encoder.dir/base64.cpp.obj: ../base64.h
 CMakeFiles/MTA_TEA_Encoder.dir/main.cpp.obj: ../base64.h
 CMakeFiles/MTA_TEA_Encoder.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/MTA_TEA_Encoder.dir/main.cpp.obj: ../md5.h
+CMakeFiles/MTA_TEA_Encoder.dir/main.cpp.obj: ../tea.h
 
 CMakeFiles/MTA_TEA_Encoder.dir/md5.cpp.obj: ../md5.cpp
 CMakeFiles/MTA_TEA_Encoder.dir/md5.cpp.obj: ../md5.h
+
+CMakeFiles/MTA_TEA_Encoder.dir/tea.cpp.obj: ../tea.cpp
+CMakeFiles/MTA_TEA_Encoder.dir/tea.cpp.obj: ../tea.h
 

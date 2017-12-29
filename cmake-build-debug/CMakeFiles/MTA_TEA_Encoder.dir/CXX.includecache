@@ -35,6 +35,12 @@ fstream
 -
 sys/stat.h
 -
+tea.h
+C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/tea.h
+thread
+-
+mutex
+-
 
 C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/md5.cpp
 md5.h
@@ -47,4 +53,10 @@ cstring
 -
 iostream
 -
+
+C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/tea.cpp
+tea.h
+C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/tea.h
+
+C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/tea.h
 

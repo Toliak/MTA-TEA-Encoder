@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MTA_TEA_Encoder.dir/main.cpp.obj"
   "CMakeFiles/MTA_TEA_Encoder.dir/md5.cpp.obj"
   "CMakeFiles/MTA_TEA_Encoder.dir/base64.cpp.obj"
+  "CMakeFiles/MTA_TEA_Encoder.dir/tea.cpp.obj"
   "MTA_TEA_Encoder.pdb"
   "MTA_TEA_Encoder.exe"
   "MTA_TEA_Encoder.exe.manifest"
