@@ -113,7 +113,7 @@ bool encodeFile(const std::string fpath, const std::string key) {
     return true;
 }
 
-int main(int argc, char* argv[]) {
+int main(const int argc, const char* argv[]) {
     //path
     std::string fpath;
     if (argc>1) {
@@ -147,6 +147,10 @@ int main(int argc, char* argv[]) {
         t.join();
     }
 
+    for (size_t i=0; i<argc-1; i++) {
+        delete threads[i];
+    }
+    delete[] threads;
     char _C; std::cin >> _C;            //breakpoint
     return 0;
 }
