@@ -1,3 +1,0 @@
-C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/cmake-build-debug/CMakeFiles/MTA_TEA_Encoder.dir
-C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/cmake-build-debug/CMakeFiles/rebuild_cache.dir

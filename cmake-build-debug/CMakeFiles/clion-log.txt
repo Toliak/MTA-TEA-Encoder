@@ -1,4 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2017.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Toliak\Documents\WORK\CLionProjects\MTA_TEA_Encoder
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/Toliak/Documents/WORK/CLionProjects/MTA_TEA_Encoder/cmake-build-debug
