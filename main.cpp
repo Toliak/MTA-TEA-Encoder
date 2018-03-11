@@ -13,6 +13,8 @@
 #define MAX(x,y) (((x)>(y)) ? (x) : (y))
 #define MIN(x,y) (((x)<(y)) ? (x) : (y))
 
+#define LOG_FILENAME "encoder.log"
+
 std::mutex mu;
 
 std::string getFileName(const std::string& s, std::string* pathwithoutname) {
@@ -42,7 +44,11 @@ void stringToUpper(std::string* s) {
     }
 }
 
-bool encodeFile(const std::string fpath, const std::string key) {
+bool log(std::ofstream* ofile, const std::string filefolder, const std::string new_fname, const std::string md5_new_fname, const std::string old_fname) {
+    *ofile << "Encoded from '" << old_fname << "' to '" << new_fname << "'('" << md5_new_fname << "') in '" << filefolder << "'" << std::endl;
+}
+
+bool encodeFile(const std::string fpath, const std::string key, std::ofstream* log_file) {
     //file reader
     struct stat results;
     if (stat(fpath.c_str(), &results) != 0) {
@@ -92,13 +98,14 @@ bool encodeFile(const std::string fpath, const std::string key) {
 
     //file writer
     std::string filefolder;
-    std::string filename = key + ":" + getFileName(fpath, &filefolder);     //новое имя файла
+    std::string old_filename = getFileName(fpath, &filefolder);
+    std::string filename = key + ":" + old_filename;     //новое имя файла
     mu.lock(); std::cout << "[Thread: " << std::this_thread::get_id() << "][Output] File non-hased name: " << filename << std::endl; mu.unlock();
 
-    filename = md5(filename);
-    mu.lock(); std::cout << "[Thread: " << std::this_thread::get_id() << "][Output] File hased name: " << filename << std::endl; mu.unlock();
-    stringToUpper(&filename);
-    std::string fullpath = filefolder + filename;
+    std::string md5_filename = md5(filename);
+    mu.lock(); std::cout << "[Thread: " << std::this_thread::get_id() << "][Output] File hased name: " << md5_filename << std::endl; mu.unlock();
+    stringToUpper(&md5_filename);
+    std::string fullpath = filefolder + md5_filename;
     std::ofstream ofile(fullpath.c_str(), std::ios::out | std::ios::binary);
     if (ofile.good()) {
         ofile.clear();
@@ -106,6 +113,8 @@ bool encodeFile(const std::string fpath, const std::string key) {
     ofile.write(obuffer, obuffer_size);
     ofile.close();
     mu.lock(); std::cout << "[Thread: " << std::this_thread::get_id() << "][Output] File has been encoded into: " << fullpath << std::endl; mu.unlock();
+
+    log(log_file, filefolder, filename, md5_filename, old_filename);
 
     delete[] fbuffer;
     delete[] vbuffer;
@@ -131,6 +140,11 @@ int main(const int argc, const char* argv[]) {
     std::cin >> key;
     std::cout << std::endl;
 
+    std::string f, main_folder;
+    getFileName(argv[0], &main_folder);
+    std::ofstream ofile(main_folder+LOG_FILENAME, std::ios::out | std::ios::app);
+    std::cout << "[Output] Logging into: " << LOG_FILENAME << std::endl;
+
     std::thread** threads;
     if (argc>1) {
         threads = new std::thread*[argc-1];
@@ -153,6 +167,8 @@ int main(const int argc, const char* argv[]) {
         delete threads[i];
     }
     delete[] threads;
+
+    ofile.close();
     char _C; std::cin >> _C;            //breakpoint
     return 0;
 }
