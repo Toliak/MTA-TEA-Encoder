@@ -136,15 +136,17 @@ int main(const int argc, const char* argv[]) {
         threads = new std::thread*[argc-1];
         for (int i=0; i<argc-1; i++) {
             std::string tfpath(argv[i+1]);
-            std::thread* t  = new std::thread(encodeFile, tfpath, key);
+            std::thread* t  = new std::thread(encodeFile, tfpath, key, &ofile);
             threads[i] = t;
         }
         for (int i=0; i<argc-1; i++) {
             threads[i]->join();
         }
     } else {
-        std::thread t(encodeFile, fpath, key);
-        t.join();
+        threads = new std::thread*[1];
+        std::thread* t = new std::thread(encodeFile, fpath, key, &ofile);
+        threads[0] = t;
+        t->join();
     }
 
     for (size_t i=0; i<argc-1; i++) {
